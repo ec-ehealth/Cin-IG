@@ -35,10 +35,10 @@
   ],
   "dependsOn": [
     {
-      "uri": "https://build.fhir.org/ig/ec-ehealth/Build-source/package.tgz",
+      "uri": "https://www.ehealth.fgov.be/standards/fhir/ImplementationGuide/BeCoreImplementationGuide",
       "packageId": "BeCoreImplementationGuide",
       "id": "BeCoreImplementationGuide",
-      "version": "1.1.0"
+      "version": "dev"
     }
   ],
   "definition": {
