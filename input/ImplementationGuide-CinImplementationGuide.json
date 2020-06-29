@@ -1,0 +1,358 @@
+{
+  "resourceType": "ImplementationGuide",
+  "id": "CinImplementationGuide",
+  "url": "http://www.mycarenet.be/fhir/ImplementationGuide/CinImplementationGuide",
+  "version": "1.1.0",
+  "name": "TheCinFHIRProfiles",
+  "title": "The Cin FHIR Profiles",
+  "status": "active",
+  "publisher": "Cin",
+  "contact": [
+    {
+      "name": "Cin",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://www.mycarenet.be/"
+        }
+      ]
+    },
+    {
+      "name": "Cin",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "test@cin.be"
+        }
+      ]
+    }
+  ],
+  "description": "Cin IG.",
+  "packageId": "CinImplementationGuide",
+  "license": "CC0-1.0",
+  "fhirVersion": [
+    "4.0.1"
+  ],
+  "dependsOn": [
+    {
+      "uri": "https://build.fhir.org/ig/ec-ehealth/Build-source/package.tgz",
+      "packageId": "BeCoreImplementationGuide",
+      "id": "BeCoreImplementationGuide",
+      "version": "1.1.0"
+    }
+  ],
+  "definition": {
+    "resource": [
+      {
+        "reference": {
+          "reference": "StructureDefinition/be-mycarenetclaim"
+        },
+        "name": "My CareNet Claim BE profile",
+        "description": "Claim profile for use in the different eAgreement flow from MyCareNet.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/be-mycarenetclaimresponse"
+        },
+        "name": "My CareNet Claim Response BE profile",
+        "description": "Claimresponse profile for use in the different eAgreement flows from MyCareNet.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/be-mycareneteagreementdemand"
+        },
+        "name": "My CareNet eAgreement Demand Bundle BE profile",
+        "description": "The profile for the demand for an agreement.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/be-mycareneteagreementmessageheader"
+        },
+        "name": "My CareNet eAgreement MessageHeader BE profile",
+        "description": "This is the generic MessageHeader profile for use in the different eAgreement flows from MyCareNet.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/be-mycareneteagreementconsultreply"
+        },
+        "name": "My CareNet eAgreement Consult Reply Bundle BE profile",
+        "description": "Profile for the reply to consulting eAgreement request in the MyCareNet flows.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/be-mycareneteagreementdemandreply"
+        },
+        "name": "My CareNet eAgreement Demand Reply Bundle BE profile",
+        "description": "The profile for the reply on a demand for an agreement in the MyCareNet flows.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/be-mycareneteagreementconsult"
+        },
+        "name": "My CareNet eAgreement Consult Bundle BE profile",
+        "description": "Profile for the consulting of eAgreement in the MyCareNet flows.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/be-mycarenetoperationoutcome"
+        },
+        "name": "My CareNet operation outcome BE profile",
+        "description": "OperationOutcome profile for the specific error codes of MyCareNet.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/be-mycarenetpathologyregistration"
+        },
+        "name": "My CareNet pathology registration bundle BE profile",
+        "description": "Profile for the registration of a pathology in the MyCareNet flows.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/be-mycarenetpathologyregistrationreply"
+        },
+        "name": "My CareNet pathology registration reply bundle BE profile",
+        "description": "Profile for the registrationreply of a pathology in the MyCareNet flows.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ReportedNumberOfSessions"
+        },
+        "name": "ReportedNumberOfSessions",
+        "description": "To define e.g. when a physiotherapy procedure took 10 sessions. Only used in administrative flows.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/be-beproductorservice"
+        },
+        "name": "ValueSet productor service",
+        "description": "NIHDI codes for use to describe eAgreement products or services in the MyCareNet eAgreement flows.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/agreement-errors"
+        },
+        "name": "CodeSystem agreement errors",
+        "description": "Errors in the agreement flows of MyCareNet. These values were delivered by the \nNIC(Nationaal Intermutualistisch College)/CIN(Collège Intermutualiste National.) Not all codes are defined here, a full list can be found on mycarenet.be.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/agreement-types"
+        },
+        "name": "CodeSystem agreement types",
+        "description": "Agreement types for MyCareNet flows. Not all codes are defined here, a full list can be found on mycarenet.be",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/decision-values"
+        },
+        "name": "CodeSystem decision values",
+        "description": "Decision values in the agreement flows of MyCareNet. These values were delivered by the \nNIC(Nationaal Intermutualistisch College)/CIN(Collège Intermutualiste National.) The codes are not defined here, a full list can be found on mycarenet.be.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/diagnosticreport-types"
+        },
+        "name": "CodeSystem diagnostic report types",
+        "description": "DiagnosticReport types for MyCareNet flows.No are defined here, a full list can be found on mycarenet.be.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/message-events"
+        },
+        "name": "CodeSystem message events",
+        "description": "Message events for MyCareNet flows.Not all codes are defined here, a full list can be found on mycarenet.be",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/refusal-values"
+        },
+        "name": "CodeSystem refusal values",
+        "description": "Refusal values in the agreement flows of MyCareNet. These values were delivered by the \nNIC(Nationaal Intermutualistisch College)/CIN(Collège Intermutualiste National.) The codes are not defined here, a full list can be found on mycarenet.be.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/waitingforinformation-value"
+        },
+        "name": "CodeSystem waiting for information values",
+        "description": "Waiting for information values in the agreement flows of MyCareNet. These values were delivered by the \nNIC(Nationaal Intermutualistisch College)/CIN(Collège Intermutualiste National.) The codes are not defined here, a full list can be found on mycarenet.be.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/nihdi-legal-physiotherapy-fa"
+        },
+        "name": "CodeSystem NIHDILegalPhysiotherapyFa",
+        "description": "Legal pathology codes as defined by NIHDI to be used in the pathology registration flows of MyCareNet. These values are managed by NIHDI. \r\n\tThe codes are not defined here. Consult the cookbooks on mycarenet.be for concrete usage intstrcutions.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/nihdi-physiotherapy-pathologysituationcode"
+        },
+        "name": "CodeSystem NIHDIPhysiotherapyPathology",
+        "description": "Legal pathology situation codes as defined by NIHDI to be used in the pathology registration flows of MyCareNet. These values are managed by NIHDI. The codes are not defined here. Consult the cookbooks on mycarenet.be for concrete usage instructions.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "Binary/annexSR2"
+        },
+        "name": "annexSR2",
+        "description": "annexSR2 for EX01",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "NamingSystem/be-insurancenumber"
+        },
+        "name": "NamingSystem insurance number",
+        "description": "The insurance number naming system",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "NamingSystem/be-insurancymembership"
+        },
+        "name": "NamingSystem insurancy membership",
+        "description": "The insurancy membership naming system",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "Claim/bemycarenetclaim1"
+        },
+        "name": "BeMyCareNetClaim 1",
+        "description": "BeMyCareNetClaim 1",
+        "exampleCanonical": "http://www.mycarenet.be/fhir/StructureDefinition/be-mycarenetclaim"
+      },
+      {
+        "reference": {
+          "reference": "MessageHeader/bemycareneteagreementmessageheader1"
+        },
+        "name": "BeMyCareNetEAgreementMessageHeader 1",
+        "description": "BeMyCareNetEAgreementMessageHeader 1",
+        "exampleCanonical": "http://www.mycarenet.be/fhir/StructureDefinition/be-mycareneteagreementmessageheader"
+      },
+      {
+        "reference": {
+          "reference": "Coverage/coverage1"
+        },
+        "name": "Coverage 1",
+        "description": "Coverage 1",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Bundle/ex01"
+        },
+        "name": "EX01_demande_accord_kine by hospital5 with patient national registration number",
+        "description": "BeMyCareNetEAgreementDemand example",
+        "exampleCanonical": "http://www.mycarenet.be/fhir/StructureDefinition/be-mycareneteagreementdemand"
+      },
+      {
+        "reference": {
+          "reference": "Bundle/ex04"
+        },
+        "name": "EX04_demande accord kine13_reply_agreement",
+        "description": "BeMyCareNetEAgreementDemandReply example",
+        "exampleCanonical": "http://www.mycarenet.be/fhir/StructureDefinition/be-mycareneteagreementdemandreply"
+      },
+      {
+        "reference": {
+          "reference": "Bundle/ex12"
+        },
+        "name": "EX12_consult accord kine9",
+        "description": "BeMyCareNetEAgreementConsult example",
+        "exampleCanonical": "http://www.mycarenet.be/fhir/StructureDefinition/be-mycareneteagreementconsult"
+      },
+      {
+        "reference": {
+          "reference": "Bundle/ex14"
+        },
+        "name": "EX14_pathologyRegistration7_testWithMultipleDiagnosticReportasCollectionBundles",
+        "description": "BeMyCareNetEAgreementPathologyregistration example",
+        "exampleCanonical": "http://www.mycarenet.be/fhir/StructureDefinition/be-mycarenetpathologyregistration"
+      },
+      {
+        "reference": {
+          "reference": "Patient/patient1"
+        },
+        "name": "Patient 1",
+        "description": "Patient 1",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Practitioner/practitioner1"
+        },
+        "name": "Practitioner 1",
+        "description": "Practitioner 1",
+        "exampleBoolean": true
+      }
+    ],
+    "page": {
+      "nameUrl": "toc.html",
+      "title": "Table of Contents",
+      "generation": "html",
+      "page": [
+        {
+          "nameUrl": "index.html",
+          "title": "Home",
+          "generation": "html"
+        },
+        {
+          "nameUrl": "guidance.html",
+          "title": "Guidance",
+          "generation": "html"
+        },
+        {
+          "nameUrl": "conventions.html",
+          "title": "Conventions",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "downloads.html",
+          "title": "Downloads",
+          "generation": "html"
+        },
+        {
+          "nameUrl": "changes.html",
+          "title": "Changes",
+          "generation": "html"
+        }
+      ]
+    },
+    "parameter": [
+      {
+        "code": "copyrightyear",
+        "value": "2020+"
+      },
+      {
+        "code": "releaselabel",
+        "value": "CI Build"
+      },
+      {
+        "code": "show-inherited-invariants",
+        "value": "false"
+      }
+    ]
+  }
+}

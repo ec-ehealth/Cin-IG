@@ -1,0 +1,214 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "be-mycareneteagreementdemand",
+  "url": "http://www.mycarenet.be/fhir/StructureDefinition/be-mycareneteagreementdemand",
+  "version": "1.1.0",
+  "name": "BeMyCareNetEAgreementDemand",
+  "title": "My CareNet eAgreement Demand Bundle BE profile",
+  "status": "active",
+  "description": "The profile for the demand for an agreement.",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "cda",
+      "uri": "http://hl7.org/v3/cda",
+      "name": "CDA (R2)"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Bundle",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Bundle",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Bundle.type",
+        "path": "Bundle.type",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.timestamp",
+        "path": "Bundle.timestamp",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry",
+        "path": "Bundle.entry",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "resource"
+            }
+          ],
+          "rules": "open",
+          "description": "Slice based on the entry.resource type"
+        },
+        "min": 5
+      },
+      {
+        "id": "Bundle.entry:messageHeader",
+        "path": "Bundle.entry",
+        "sliceName": "messageHeader",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:messageHeader.resource",
+        "path": "Bundle.entry.resource",
+        "min": 1,
+        "type": [
+          {
+            "code": "MessageHeader",
+            "profile": [
+              "http://www.mycarenet.be/fhir/StructureDefinition/be-mycareneteagreementmessageheader"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:practitioner",
+        "path": "Bundle.entry",
+        "sliceName": "practitioner",
+        "min": 1,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:practitioner.resource",
+        "path": "Bundle.entry.resource",
+        "min": 1,
+        "type": [
+          {
+            "code": "Practitioner",
+            "profile": [
+              "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitioner"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:claim",
+        "path": "Bundle.entry",
+        "sliceName": "claim",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:claim.resource",
+        "path": "Bundle.entry.resource",
+        "min": 1,
+        "type": [
+          {
+            "code": "Claim",
+            "profile": [
+              "http://www.mycarenet.be/fhir/StructureDefinition/be-mycarenetclaim"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:practitionerRole",
+        "path": "Bundle.entry",
+        "sliceName": "practitionerRole",
+        "min": 1,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:practitionerRole.resource",
+        "path": "Bundle.entry.resource",
+        "min": 1,
+        "type": [
+          {
+            "code": "PractitionerRole",
+            "profile": [
+              "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitionerrole"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:organization",
+        "path": "Bundle.entry",
+        "sliceName": "organization",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:organization.resource",
+        "path": "Bundle.entry.resource",
+        "min": 1,
+        "type": [
+          {
+            "code": "Organization",
+            "profile": [
+              "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-organization"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:patient",
+        "path": "Bundle.entry",
+        "sliceName": "patient",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:patient.resource",
+        "path": "Bundle.entry.resource",
+        "min": 1,
+        "type": [
+          {
+            "code": "Patient",
+            "profile": [
+              "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:serviceRequest",
+        "path": "Bundle.entry",
+        "sliceName": "serviceRequest",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:serviceRequest.resource",
+        "path": "Bundle.entry.resource",
+        "min": 1,
+        "type": [
+          {
+            "code": "ServiceRequest",
+            "profile": [
+              "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-servicerequest"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

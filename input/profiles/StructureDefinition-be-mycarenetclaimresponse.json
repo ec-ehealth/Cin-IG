@@ -1,0 +1,162 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "be-mycarenetclaimresponse",
+  "url": "http://www.mycarenet.be/fhir/StructureDefinition/be-mycarenetclaimresponse",
+  "version": "1.1.0",
+  "name": "BeMyCareNetClaimResponse",
+  "title": "My CareNet Claim Response BE profile",
+  "status": "active",
+  "description": "Claimresponse profile for use in the different eAgreement flows from MyCareNet.",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "workflow",
+      "uri": "http://hl7.org/fhir/workflow",
+      "name": "Workflow Pattern"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "ClaimResponse",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/ClaimResponse",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "ClaimResponse.status",
+        "path": "ClaimResponse.status",
+        "mustSupport": true
+      },
+      {
+        "id": "ClaimResponse.type",
+        "path": "ClaimResponse.type",
+        "mustSupport": true
+      },
+      {
+        "id": "ClaimResponse.subType",
+        "path": "ClaimResponse.subType",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "ClaimResponse.subType.coding.system",
+        "path": "ClaimResponse.subType.coding.system",
+        "patternUri": "http://www.mycarenet.be/fhir/CodeSystem/agreement-types"
+      },
+      {
+        "id": "ClaimResponse.use",
+        "path": "ClaimResponse.use",
+        "mustSupport": true
+      },
+      {
+        "id": "ClaimResponse.patient",
+        "path": "ClaimResponse.patient",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "ClaimResponse.created",
+        "path": "ClaimResponse.created",
+        "mustSupport": true
+      },
+      {
+        "id": "ClaimResponse.insurer",
+        "path": "ClaimResponse.insurer",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-organization"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "ClaimResponse.requestor",
+        "path": "ClaimResponse.requestor",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-organization",
+              "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitioner",
+              "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitionerrole"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "ClaimResponse.outcome",
+        "path": "ClaimResponse.outcome",
+        "mustSupport": true
+      },
+      {
+        "id": "ClaimResponse.preAuthRef",
+        "path": "ClaimResponse.preAuthRef",
+        "mustSupport": true
+      },
+      {
+        "id": "ClaimResponse.preAuthPeriod",
+        "path": "ClaimResponse.preAuthPeriod",
+        "mustSupport": true
+      },
+      {
+        "id": "ClaimResponse.item.adjudication",
+        "path": "ClaimResponse.item.adjudication",
+        "mustSupport": true
+      },
+      {
+        "id": "ClaimResponse.item.adjudication.category.coding.system",
+        "path": "ClaimResponse.item.adjudication.category.coding.system",
+        "patternUri": "http://www.mycarenet.be/fhir/CodeSystem/decision-values"
+      },
+      {
+        "id": "ClaimResponse.item.adjudication.reason.coding.system",
+        "path": "ClaimResponse.item.adjudication.reason.coding.system",
+        "patternUri": "http://www.mycarenet.be/fhir/CodeSystem/refusal-values"
+      },
+      {
+        "id": "ClaimResponse.addItem",
+        "path": "ClaimResponse.addItem",
+        "mustSupport": true
+      },
+      {
+        "id": "ClaimResponse.addItem.itemSequence",
+        "path": "ClaimResponse.addItem.itemSequence",
+        "mustSupport": true
+      },
+      {
+        "id": "ClaimResponse.addItem.productOrService",
+        "path": "ClaimResponse.addItem.productOrService",
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://www.mycarenet.be/fhir/ValueSet/be-beproductorservice"
+        }
+      },
+      {
+        "id": "ClaimResponse.addItem.adjudication",
+        "path": "ClaimResponse.addItem.adjudication",
+        "mustSupport": true
+      }
+    ]
+  }
+}

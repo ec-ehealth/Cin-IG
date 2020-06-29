@@ -1,0 +1,29 @@
+{
+  "resourceType": "NamingSystem",
+  "id": "be-insurancenumber",
+  "name": "BeInsuranceNumberNamingSystem",
+  "status": "active",
+  "kind": "identifier",
+  "date": "2020-06-01",
+  "uniqueId": [
+    {
+      "type": "uri",
+      "value": "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/insurancenumber",
+      "preferred": true
+    }
+  ],
+  "publisher": "eHealth Platform",
+  "contact": [
+    {
+      "name": "eHealth Platform",
+      "telecom": [
+        {
+          "use": "work",
+          "system": "email",
+          "value": "message-structure@ehealth.fgov.be"
+        }
+      ]
+    }
+  ],
+  "description": "insurance number"
+}

@@ -1,0 +1,29 @@
+{
+  "resourceType": "NamingSystem",
+  "id": "be-insurancymembership",
+  "name": "BeInsurancymembershipNamingSystem",
+  "status": "active",
+  "kind": "identifier",
+  "date": "2020-06-01",
+  "uniqueId": [
+    {
+      "type": "uri",
+      "value": "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/insurancymembership",
+      "preferred": true
+    }
+  ],
+  "publisher": "eHealth Platform",
+  "contact": [
+    {
+      "name": "eHealth Platform",
+      "telecom": [
+        {
+          "use": "work",
+          "system": "email",
+          "value": "message-structure@ehealth.fgov.be"
+        }
+      ]
+    }
+  ],
+  "description": "embership number of a patient with an insurance organization"
+}

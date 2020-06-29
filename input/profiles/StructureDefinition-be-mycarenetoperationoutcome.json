@@ -1,0 +1,62 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "be-mycarenetoperationoutcome",
+  "url": "http://www.mycarenet.be/fhir/StructureDefinition/be-mycarenetoperationoutcome",
+  "version": "1.1.0",
+  "name": "BeMyCareNetOperationOutcome",
+  "title": "My CareNet operation outcome BE profile",
+  "status": "active",
+  "description": "OperationOutcome profile for the specific error codes of MyCareNet.",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "OperationOutcome",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/OperationOutcome",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "OperationOutcome.issue",
+        "path": "OperationOutcome.issue",
+        "mustSupport": true
+      },
+      {
+        "id": "OperationOutcome.issue.severity",
+        "path": "OperationOutcome.issue.severity",
+        "mustSupport": true
+      },
+      {
+        "id": "OperationOutcome.issue.code",
+        "path": "OperationOutcome.issue.code",
+        "mustSupport": true
+      },
+      {
+        "id": "OperationOutcome.issue.details",
+        "path": "OperationOutcome.issue.details",
+        "mustSupport": true
+      },
+      {
+        "id": "OperationOutcome.issue.details.coding.system",
+        "path": "OperationOutcome.issue.details.coding.system",
+        "patternUri": "https://www.mycarenet.be/fhir/CodeSystem/agreement-errors"
+      },
+      {
+        "id": "OperationOutcome.issue.expression",
+        "path": "OperationOutcome.issue.expression",
+        "mustSupport": true
+      }
+    ]
+  }
+}

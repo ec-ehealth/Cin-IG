@@ -1,0 +1,18 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "complete",
+  "name": "NIHDIPhysiotherapyPathologySituationCode",
+  "id": "nihdi-physiotherapy-pathologysituationcode",
+  "title": "CodeSystem NIHDIPhysiotherapyPathology",
+  "description": "Legal pathology situation codes as defined by NIHDI to be used in the pathology registration flows of MyCareNet. These values are managed by NIHDI. The codes are not defined here. Consult the cookbooks on mycarenet.be for concrete usage instructions.",
+  "version": "1.1.0",
+  "url": "http://www.mycarenet.be/fhir/CodeSystem/nihdi-physiotherapy-pathologysituationcode",
+  "concept": [
+    {
+      "code": "fb-51",
+      "display": "fb-51"
+    }
+  ],
+  "count": 1
+}

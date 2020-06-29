@@ -1,0 +1,176 @@
+{
+  "resourceType": "Bundle",
+  "id": "ex12",
+  "meta": {
+    "profile": [
+      "http://www.mycarenet.be/fhir/StructureDefinition/be-mycareneteagreementconsult"
+    ]
+  },
+  "timestamp": "2015-07-14T11:15:33+02:00",
+  "type": "transaction",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "MessageHeader",
+        "id": "MessageHeaderEx12",
+        "meta": {
+          "profile": [
+            "http://www.mycarenet.be/fhir/StructureDefinition/be-mycareneteagreementmessageheader"
+          ]
+        },
+        "eventCoding": {
+          "system": "http://www.mycarenet.be/fhir/CodeSystem/message-events",
+          "code": "claim-ask"
+        },
+        "destination": [
+          {
+            "name": "MyCareNet",
+            "endpoint": "MyCareNet"
+          }
+        ],
+        "sender": {
+          "reference": "PractitionerRole/PractitionerRoleEx12"
+        },
+        "source": {
+          "endpoint": "urn:uuid:PractitionerRoleEx12"
+        },
+        "focus": [
+          {
+            "reference": "Parameters/ParametersEx12"
+          }
+        ]
+      },
+      "fullUrl": "MessageHeader/Ex12",
+      "request": {
+        "method": "POST",
+        "url": "MessageHeader"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "PractitionerEx12",
+        "meta": {
+          "profile": [
+            "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitioner"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/nihdi",
+            "value": "54263481527"
+          }
+        ],
+        "name": [
+          {
+            "family": "Smith",
+            "given": [
+              "John"
+            ]
+          }
+        ]
+      },
+      "fullUrl": "Practitioner/Ex12",
+      "request": {
+        "method": "POST",
+        "url": "Practitioner"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "PractitionerRole",
+        "id": "PractitionerRoleEx12",
+        "meta": {
+          "profile": [
+            "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitionerrole"
+          ]
+        },
+        "practitioner": {
+          "reference": "Practitioner/PractitionerEx12"
+        },
+        "code": [
+          {
+            "coding": [
+              {
+                "system": "https://www.ehealth.fgov.be/standards/fhir/CodeSystem/cd-hcparty",
+                "code": "persphysiotherapist",
+                "display": "physiotherapist"
+              }
+            ]
+          }
+        ]
+      },
+      "fullUrl": "PractitionerRole/Ex12",
+      "request": {
+        "method": "POST",
+        "url": "PractitionerRole"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "PatientEx12",
+        "meta": {
+          "profile": [
+            "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/ssin",
+            "value": "73031805784"
+          }
+        ],
+        "name": [
+          {
+            "family": "Dupont",
+            "given": [
+              "Jean"
+            ]
+          }
+        ],
+        "gender": "male"
+      },
+      "fullUrl": "Patient/Ex12",
+      "request": {
+        "method": "POST",
+        "url": "Patient"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Parameters",
+        "id": "ParametersEx12",
+        "parameter": [
+          {
+            "name": "resourceType",
+            "valueString": "ClaimResponse"
+          },
+          {
+            "name": "use",
+            "valueCode": "preauthorization"
+          },
+          {
+            "name": "subType",
+            "valueCoding": {
+              "system": "http://www.mycarenet.be/fhir/CodeSystem/agreement-types",
+              "code": "physiotherapy"
+            }
+          },
+          {
+            "name": "preAuthPeriod",
+            "valuePeriod": {
+              "start": "2020-01-15",
+              "end": "2020-03-15"
+            }
+          }
+        ]
+      },
+      "fullUrl": "Parameters/Ex12",
+      "request": {
+        "method": "POST",
+        "url": "Parameters"
+      }
+    }
+  ]
+}

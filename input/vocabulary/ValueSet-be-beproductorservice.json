@@ -1,0 +1,17 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "BeProductorServiceNihdiEAgreement",
+  "id": "be-beproductorservice",
+  "title": "ValueSet productor service",
+  "description": "NIHDI codes for use to describe eAgreement products or services in the MyCareNet eAgreement flows.",
+  "version": "1.1.0",
+  "url": "http://www.mycarenet.be/fhir/ValueSet/be-beproductorservice",
+  "compose": {
+    "include": [
+      {
+        "system": "http://www.mycarenet.be/fhir/CodeSystem/nihdi-physiotherapy-pathologysituationcode"
+      }
+    ]
+  }
+}

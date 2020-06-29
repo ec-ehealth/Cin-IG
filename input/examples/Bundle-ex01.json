@@ -1,0 +1,283 @@
+{
+  "resourceType": "Bundle",
+  "id": "ex01",
+  "meta": {
+    "profile": [
+      "http://www.mycarenet.be/fhir/StructureDefinition/be-mycareneteagreementdemand"
+    ]
+  },
+  "timestamp": "2015-07-14T11:15:33+02:00",
+  "type": "transaction",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "MessageHeader",
+        "id": "MessageHeaderEx01",
+        "meta": {
+          "profile": [
+            "http://www.mycarenet.be/fhir/StructureDefinition/be-mycareneteagreementmessageheader"
+          ]
+        },
+        "eventCoding": {
+          "system": "http://www.mycarenet.be/fhir/CodeSystem/message-events",
+          "code": "claim-ask"
+        },
+        "destination": [
+          {
+            "name": "MyCareNet",
+            "endpoint": "MyCareNet"
+          }
+        ],
+        "sender": {
+          "reference": "Organization/OrganizationEx01"
+        },
+        "source": {
+          "endpoint": "urn:uuid:OrganizationEx01"
+        },
+        "focus": [
+          {
+            "reference": "Claim/ClaimEx01"
+          }
+        ]
+      },
+      "fullUrl": "MessageHeader/Ex01",
+      "request": {
+        "method": "POST",
+        "url": "MessageHeader"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "PractitionerEx01",
+        "meta": {
+          "profile": [
+            "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitioner"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/nihdi",
+            "value": "54263481527"
+          }
+        ],
+        "name": [
+          {
+            "family": "Smith",
+            "given": [
+              "John"
+            ]
+          }
+        ]
+      },
+      "fullUrl": "Practitioner/Ex01",
+      "request": {
+        "method": "POST",
+        "url": "Practitioner"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Claim",
+        "id": "ClaimEx01",
+        "meta": {
+          "profile": [
+            "http://www.mycarenet.be/fhir/StructureDefinition/be-mycarenetclaim"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "https://www.ehealth.fgov.be/standards/fhir/id",
+            "value": "1111"
+          }
+        ],
+        "status": "active",
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+              "code": "institutional"
+            }
+          ]
+        },
+        "subType": {
+          "coding": [
+            {
+              "system": "http://www.mycarenet.be/fhir/CodeSystem/agreement-types",
+              "code": "physiotherapy_fa"
+            }
+          ]
+        },
+        "use": "claim",
+        "patient": {
+          "reference": "Patient/PatientEx01"
+        },
+        "created": "2020-04-07",
+        "enterer": {
+          "reference": "Practitioner/PractitionerEx01"
+        },
+        "provider": {
+          "reference": "Practitioner/PractitionerEx01"
+        },
+        "priority": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/processpriority",
+              "code": "normal"
+            }
+          ]
+        },
+        "insurance": [
+          {
+            "sequence": 1,
+            "focal": true,
+            "coverage": {
+              "reference": "Coverage/coverage1"
+            }
+          }
+        ]
+      },
+      "fullUrl": "Claim/Ex01",
+      "request": {
+        "method": "POST",
+        "url": "Claim"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "PractitionerRole",
+        "id": "PractitionerRoleEx01",
+        "meta": {
+          "profile": [
+            "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitionerrole"
+          ]
+        },
+        "practitioner": {
+          "reference": "Practitioner/PractitionerEx01"
+        },
+        "code": [
+          {
+            "coding": [
+              {
+                "system": "https://www.ehealth.fgov.be/standards/fhir/CodeSystem/cd-hcparty",
+                "code": "persphysiotherapist",
+                "display": "physiotherapist"
+              }
+            ]
+          }
+        ]
+      },
+      "fullUrl": "PractitionerRole/Ex01",
+      "request": {
+        "method": "POST",
+        "url": "PractitionerRole"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Organization",
+        "id": "OrganizationEx01",
+        "meta": {
+          "profile": [
+            "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-organization"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/nihdi",
+            "value": "71000436000"
+          }
+        ],
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://www.ehealth.fgov.be/standards/fhir/CodeSystem/cd-hcparty",
+                "code": "orghospital"
+              }
+            ]
+          }
+        ]
+      },
+      "fullUrl": "Organization/Ex01",
+      "request": {
+        "method": "POST",
+        "url": "Organization"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "PatientEx01",
+        "meta": {
+          "profile": [
+            "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/ssin",
+            "value": "73031805784"
+          }
+        ],
+        "name": [
+          {
+            "family": "Dupont",
+            "given": [
+              "Jean"
+            ]
+          }
+        ],
+        "gender": "male"
+      },
+      "fullUrl": "Patient/Ex01",
+      "request": {
+        "method": "POST",
+        "url": "Patient"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ServiceRequest",
+        "id": "ServiceRequestEx01",
+        "meta": {
+          "profile": [
+            "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-servicerequest"
+          ]
+        },
+        "contained": [
+          {
+            "resourceType": "Binary",
+            "id": "annexSR2",
+            "contentType": "application/pdf",
+            "data": "QW5uZXhlIGlubGluZSwgYmFzZTY0ZWQ="
+          }
+        ],
+        "identifier": [
+          {
+            "system": "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/uhmep",
+            "value": "n° de la prescription"
+          }
+        ],
+        "status": "active",
+        "intent": "order",
+        "subject": {
+          "reference": "Patient/PatientEx01"
+        },
+        "requester": {
+          "reference": "PractitionerRole/PractitionerRoleEx01"
+        },
+        "supportingInfo": [
+          {
+            "reference": "Binary/annexSR2"
+          }
+        ]
+      },
+      "fullUrl": "ServiceRequest/Ex01",
+      "request": {
+        "method": "POST",
+        "url": "ServiceRequest"
+      }
+    }
+  ]
+}

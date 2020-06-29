@@ -1,0 +1,18 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "complete",
+  "name": "MyCareNetAgreementErrors",
+  "id": "agreement-errors",
+  "title": "CodeSystem agreement errors",
+  "description": "Errors in the agreement flows of MyCareNet. These values were delivered by the \nNIC(Nationaal Intermutualistisch College)/CIN(Collège Intermutualiste National.) Not all codes are defined here, a full list can be found on mycarenet.be.",
+  "version": "1.1.0",
+  "url": "http://www.mycarenet.be/fhir/CodeSystem/agreement-errors",
+  "concept": [
+    {
+      "code": "130",
+      "display": "The RIZIV/INAMI code used was not valid."
+    }
+  ],
+  "count": 1
+}

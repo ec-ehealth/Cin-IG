@@ -1,0 +1,11 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "complete",
+  "name": "MyCareNetDiagnosticReportTypes",
+  "id": "report-type",
+  "title": "CodeSystem diagnostic report types",
+  "description": "DiagnosticReport types for MyCareNet flows.No are defined here, a full list can be found on mycarenet.be.",
+  "version": "1.1.0",
+  "url": "http://www.mycarenet.be/fhir/CodeSystem/report-type"
+}

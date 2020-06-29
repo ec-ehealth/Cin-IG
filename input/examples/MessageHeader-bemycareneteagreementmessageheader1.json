@@ -1,0 +1,16 @@
+{
+  "resourceType": "MessageHeader",
+  "id": "bemycareneteagreementmessageheader1",
+  "meta": {
+    "profile": [
+      "http://www.mycarenet.be/fhir/StructureDefinition/be-mycareneteagreementmessageheader"
+    ]
+  },
+  "eventCoding": {
+    "system": "http://www.mycarenet.be/fhir/CodeSystem/message-events",
+    "code": "claim-ask"
+  },
+  "source": {
+    "endpoint": "http://www.mycarenet.be"
+  }
+}
