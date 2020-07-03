@@ -35,10 +35,10 @@
   ],
   "dependsOn": [
     {
-      "uri": "https://www.ehealth.fgov.be/standards/fhir/ImplementationGuide/BeCoreImplementationGuide",
-      "packageId": "BeCoreImplementationGuide",
-      "id": "BeCoreImplementationGuide",
-      "version": "dev"
+      "uri": "https://www.ehealth.fgov.be/standards/fhir/ImplementationGuide/fed.be.core",
+      "packageId": "fed.be.core",
+      "id": "fed.be.core",
+      "version": "1.1.0"
     }
   ],
   "definition": {
